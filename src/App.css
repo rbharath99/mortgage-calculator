@@ -1,0 +1,24 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.mortgage-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mortgage-calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mortgage-calculator-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
