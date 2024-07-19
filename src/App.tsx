@@ -12,15 +12,15 @@ function App() {
     const data = new FormData(e.target as HTMLFormElement)
 
     const loanAmountValue = data.get('loan-amount')
-    const loanAmount = loanAmountValue ? parseFloat(loanAmountValue.toString()) : NaN;
+    const loanAmount: number = loanAmountValue ? parseFloat(loanAmountValue.toString()) : NaN;
 
     const interestRateValue = data.get('interest-rate');
-    const monthlyInterestRate = interestRateValue ? parseFloat(interestRateValue.toString()) / 100 / 12 : NaN;
+    const monthlyInterestRate: number = interestRateValue ? parseFloat(interestRateValue.toString()) / 100 / 12 : NaN;
 
     const loanTermValue = data.get('loan-term');
-    const loanTermInMonths = loanTermValue ? parseFloat(loanTermValue.toString()) * 12 : NaN;
+    const loanTermInMonths: number = loanTermValue ? parseFloat(loanTermValue.toString()) * 12 : NaN;
 
-    const monthlyPaymentAmount =
+    const monthlyPaymentAmount: number =
       (loanAmount * monthlyInterestRate) /
       (1 -
         1 /
@@ -29,7 +29,7 @@ function App() {
           loanTermInMonths,
         ));
 
-    const totalPaymentAmount = monthlyPaymentAmount * loanTermInMonths;
+    const totalPaymentAmount: number = monthlyPaymentAmount * loanTermInMonths;
 
     const currencyFormatter = new Intl.NumberFormat(
       'en-US',
